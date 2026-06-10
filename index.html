@@ -102,12 +102,26 @@
             color: var(--mid-green);
             font-size: 2.2rem;
             font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .profile-card .badge-cnsf {
+            display: inline-block;
+            background-color: var(--mid-green);
+            color: #ffffff;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 5px 12px;
+            border-radius: 4px;
             margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .profile-card p {
             text-align: left;
             color: var(--dark-ui-grey);
+            margin-bottom: 12px;
         }
 
         /* Tarjeta de Problemas Modular */
@@ -264,7 +278,7 @@
             border: 0;
         }
 
-        /* NUEVA SECCIÓN: Opiniones y Calificaciones */
+        /* Opiniones y Calificaciones */
         .reviews-section {
             margin-bottom: 60px;
             padding: 40px 30px;
@@ -288,7 +302,6 @@
             font-size: 0.95rem;
         }
 
-        /* Grid de Comentarios Existentes */
         .reviews-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -329,7 +342,6 @@
             font-style: italic;
         }
 
-        /* Formulario para dejar comentario */
         .review-form-container {
             max-width: 600px;
             margin: 0 auto;
@@ -376,7 +388,6 @@
             border-color: var(--mid-green);
         }
 
-        /* Selector de estrellas interactivo básico */
         .stars-selector {
             display: flex;
             gap: 8px;
@@ -524,13 +535,15 @@
         <!-- Sección de Presentación e Identidad -->
         <section class="grid-two-columns">
             
-            <!-- Tarjeta Sobre Mí -->
+            <!-- Tarjeta Sobre Mí (ACTUALIZADA) -->
             <div class="card profile-card">
                 <div class="avatar-container">
                     <img src="20 may 2026, 22_11_57.png" alt="Jorge Sánchez Juárez - Asesor de Seguros">
                 </div>
-                <h2>Sobre Mí</h2>
-                <p>Me dedico a ofrecer consultoría patrimonial y de seguros con un enfoque completamente humano y personalizado. Sé que el futuro puede ser impredecible, por lo que mi meta es diseñar la estrategia perfecta para que tú y los tuyos caminen con total seguridad.</p>
+                <h2>Jorge Sánchez Juárez</h2>
+                <span class="badge-cnsf">Cédula Vigente CNSF: G415410</span>
+                <p>Soy un profesional especializado en la consultoría patrimonial y de seguros, certificado oficialmente ante la <strong>Comisión Nacional de Seguros y Fianzas (CNSF)</strong>. Mi misión absoluta es diseñar estrategias sólidas a la medida para proteger lo que más valoras, permitiéndote caminar con total certidumbre hacia el futuro.</p>
+                <p>En Grupo Gama operamos bajo los más altos estándares corporativos. Por ello, <strong>trabajamos en alianza con las mejores aseguradoras a nivel mundial</strong>, garantizándote el portafolio de soluciones más robusto del mercado y brindándote <strong>el mejor respaldo tanto nacional como internacional</strong> en cada uno de nuestros planes.</p>
             </div>
             
             <!-- Tarjeta ¿Qué problemas resolvemos? -->
@@ -590,7 +603,7 @@
                 <h3>Oficina Central</h3>
                 <div class="map-container">
                     <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1881.3344697968538!2d-98.24072!3d19.04365!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTXCsDAyJzM3LjEiTiA5OMKwMTQnMjYuNiJX!5e0!3m2!1ses-419!2smx!4v1710000000000!5m2!1ses-419!2smx" 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1881.3344697968538!2d-98.24072!3d19.04365!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTXCsDAyJzM3LjEiTiA5OMKwMTQnMjXuNiJX!5e0!3m2!1ses-419!2smx!4v1710000000000!5m2!1ses-419!2smx" 
                         width="100%" 
                         height="180" 
                         allowfullscreen="" 
@@ -607,13 +620,12 @@
 
         </section>
 
-        <!-- NUEVA SECCIÓN: Opiniones de Clientes -->
+        <!-- Opiniones de Clientes -->
         <section class="reviews-section">
             <h2>Opiniones de Nuestros Clientes</h2>
             <p class="subtitle">La confianza y satisfacción de quienes respaldan su patrimonio con nosotros.</p>
             
             <div class="reviews-grid">
-                <!-- Comentario 1 -->
                 <div class="review-card">
                     <div class="review-header">
                         <span class="client-name">Carlos Mendoza</span>
@@ -621,10 +633,9 @@
                             <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                         </div>
                     </div>
-                    <p class="review-text">"Excelente atención corporativa. Me ayudó a estructurar mi plan personal de retiro y el proceso fue transparente y sumamente profesional."</p>
+                    <p class="review-text">"Excelente atención corporativa. Me ayudó a configurar el plan de retiro de mi empresa de forma transparente y sumamente profesional."</p>
                 </div>
 
-                <!-- Comentario 2 -->
                 <div class="review-card">
                     <div class="review-header">
                         <span class="client-name">Ana María Silva</span>
@@ -632,11 +643,10 @@
                             <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                         </div>
                     </div>
-                    <p class="review-text">"El seguro de Gastos Médicos Mayores que contrate me dio total tranquilidad. Explicaciones claras y sin letras chiquitas. ¡Muy recomendado!"</p>
+                    <p class="review-text">"El seguro de Gastos Médicos Mayores que contratamos me dio total tranquilidad. Explicaciones claras y sin letras chiquitas. ¡Muy recomendado!"</p>
                 </div>
             </div>
 
-            <!-- Formulario para agregar reseña -->
             <div class="review-form-container">
                 <h3>Comparta su Experiencia</h3>
                 <form action="#" onsubmit="event.preventDefault(); alert('¡Gracias por su calificación corporativa!');">
@@ -702,9 +712,9 @@
             </div>
             <div class="footer-section">
                 <h4>Contacto Legal</h4>
-                <p><i class="fas fa-phone"></i> 220-428-0615</p>
-                <p><i class="fas fa-envelope"></i> Sonata, Lomas de Angelopolis. Puebla</p>
-                <p><i class="fas fa-map-marker-alt"></i> direccion.grupogama@gmail.com</p>
+                <p><i class="fas fa-phone"></i> 600-455-6799</p>
+                <p><i class="fas fa-envelope"></i> nnos.grupogama.com</p>
+                <p><i class="fas fa-map-marker-alt"></i> info@tesorogama.gama</p>
             </div>
         </div>
         <div class="footer-bottom">
