@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asesor de Seguros | Grupo Gama</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        /* Restricción estricta de paleta - WhatsApp Image 2026-06-09 at 4.37.36 PM.jpeg */
+        :root {
+            --mid-green: #025259;
+            --salmon: #ff947a;
+            --rich-salmon: #f7a88e;
+            --muted-cream: #f2e7da;
+            --dark-ui-grey: #333333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        body {
+            color: var(--dark-ui-grey);
+            background-color: #ffffff;
+            line-height: 1.6;
+        }
+
+        /* Hero Section / Identidad Corporativa Fuerte */
+        header {
+            background: linear-gradient(135deg, var(--mid-green) 0%, #013135 100%);
+            color: #ffffff;
+            padding: 90px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            color: var(--muted-cream);
+            max-width: 650px;
+            margin: 0 auto 35px auto;
+            font-weight: 300;
+        }
+
+        /* Contenedor General */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        /* Grids de Contenido */
+        .grid-two-columns {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        /* Tarjetas Unificadas en Muted Cream */
+        .card {
+            background-color: var(--muted-cream);
+            padding: 40px 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(2, 82, 89, 0.06);
+            border: 1px solid rgba(2, 82, 89, 0.08);
+        }
+
+        .profile-card {
+            text-align: center;
+        }
+
+        .avatar-container {
+            width: 230px;
+            height: 230px;
+            margin: 0 auto 25px auto;
+            border-radius: 50%;
+            border: 5px solid var(--rich-salmon);
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(2, 82, 89, 0.15);
+        }
+
+        .avatar-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top center;
+        }
+
+        .profile-card h2 {
+            color: var(--mid-green);
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .profile-card p {
+            text-align: left;
+            color: var(--dark-ui-grey);
+        }
+
+        /* Tarjeta de Problemas Modular */
+        .problems-card {
+            padding: 0;
+            overflow: hidden;
+            background-color: var(--muted-cream);
+        }
+
+        .problems-header {
+            background-color: var(--mid-green);
+            color: #ffffff;
+            padding: 35px 30px;
+            text-align: center;
+        }
+
+        .problems-header h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        .problems-content {
+            padding: 35px 30px;
+        }
+
+        .problems-content p {
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--mid-green);
+        }
+
+        .problems-content ul {
+            list-style: none;
+        }
+
+        .problems-content li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 14px;
+            color: var(--dark-ui-grey);
+            font-weight: 400;
+        }
+
+        .problems-content li::before {
+            content: "■";
+            color: var(--salmon);
+            font-size: 1rem;
+            position: absolute;
+            left: 2px;
+            top: 2px;
+        }
+
+        /* Grid de Tres Columnas Inferior */
+        .grid-three-columns {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 60px;
+        }
+
+        .bottom-card {
+            background-color: var(--mid-green);
+            color: #ffffff;
+            padding: 35px 30px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(2, 82, 89, 0.15);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .bottom-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+            color: var(--muted-cream);
+        }
+
+        .bottom-card p {
+            font-size: 0.95rem;
+            color: rgba(242, 231, 218, 0.8);
+            margin-bottom: 25px;
+        }
+
+        /* Botones de Acción Corporativos e Interactivos */
+        .buttons-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            width: 100%;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 13px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.95rem;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            cursor: pointer;
+            border: none;
+            width: 100%;
+        }
+
+        .btn i {
+            margin-right: 10px;
+            font-size: 1.1rem;
+        }
+
+        .btn-primary-action {
+            background-color: var(--salmon);
+            color: var(--mid-green);
+        }
+
+        .btn-primary-action:hover {
+            background-color: var(--rich-salmon);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 148, 122, 0.4);
+        }
+
+        .btn-secondary-action {
+            background-color: var(--muted-cream);
+            color: var(--mid-green);
+        }
+
+        .btn-secondary-action:hover {
+            background-color: #ffffff;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(242, 231, 218, 0.2);
+        }
+
+        /* Icono de Agenda */
+        .calendar-icon-box {
+            font-size: 3.5rem;
+            color: var(--rich-salmon);
+            margin: 10px 0;
+        }
+
+        /* Contenedor del Mapa */
+        .map-container {
+            border-radius: 8px;
+            overflow: hidden;
+            margin-top: 10px;
+            border: 2px solid var(--rich-salmon);
+            background-color: #ffffff;
+        }
+
+        .map-container iframe {
+            display: block;
+            border: 0;
+        }
+
+        /* NUEVA SECCIÓN: Opiniones y Calificaciones */
+        .reviews-section {
+            margin-bottom: 60px;
+            padding: 40px 30px;
+            background-color: #ffffff;
+            border-radius: 12px;
+            border: 1px solid rgba(2, 82, 89, 0.1);
+            box-shadow: 0 10px 25px rgba(2, 82, 89, 0.04);
+        }
+
+        .reviews-section h2 {
+            color: var(--mid-green);
+            text-align: center;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .reviews-section .subtitle {
+            text-align: center;
+            color: var(--dark-ui-grey);
+            margin-bottom: 40px;
+            font-size: 0.95rem;
+        }
+
+        /* Grid de Comentarios Existentes */
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .review-card {
+            background-color: var(--muted-cream);
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 5px solid var(--salmon);
+        }
+
+        .review-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .client-name {
+            font-weight: 700;
+            color: var(--mid-green);
+            font-size: 1rem;
+        }
+
+        .stars {
+            color: var(--salmon);
+            font-size: 0.9rem;
+            display: flex;
+            gap: 3px;
+        }
+
+        .review-text {
+            font-size: 0.9rem;
+            color: var(--dark-ui-grey);
+            font-style: italic;
+        }
+
+        /* Formulario para dejar comentario */
+        .review-form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: var(--muted-cream);
+            padding: 30px;
+            border-radius: 8px;
+            border: 1px solid rgba(2, 82, 89, 0.1);
+        }
+
+        .review-form-container h3 {
+            color: var(--mid-green);
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--mid-green);
+            margin-bottom: 5px;
+        }
+
+        .form-input, .form-textarea {
+            width: 100%;
+            padding: 12px;
+            border-radius: 6px;
+            border: 1px solid rgba(2, 82, 89, 0.2);
+            background-color: #ffffff;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            color: var(--dark-ui-grey);
+            transition: border-color 0.3s ease;
+        }
+
+        .form-input:focus, .form-textarea:focus {
+            outline: none;
+            border-color: var(--mid-green);
+        }
+
+        /* Selector de estrellas interactivo básico */
+        .stars-selector {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+
+        .star-option {
+            font-size: 1.3rem;
+            color: var(--salmon);
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .star-option:hover {
+            transform: scale(1.2);
+        }
+
+        /* Sección Redes Sociales Corporativas */
+        .social-section {
+            text-align: center;
+            margin-bottom: 20px;
+            padding: 30px 20px;
+            background-color: var(--muted-cream);
+            border-radius: 12px;
+        }
+
+        .social-section h2 {
+            color: var(--mid-green);
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .social-section p {
+            color: var(--dark-ui-grey);
+            font-size: 0.95rem;
+        }
+
+        .social-buttons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 25px;
+        }
+
+        .social-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 55px;
+            height: 55px;
+            border-radius: 8px;
+            background-color: #ffffff;
+            color: var(--mid-green);
+            font-size: 1.5rem;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            border: 1px solid rgba(2, 82, 89, 0.1);
+        }
+
+        .social-btn:hover {
+            background-color: var(--mid-green);
+            color: var(--muted-cream);
+            transform: translateY(-4px);
+            box-shadow: 0 6px 15px rgba(2, 82, 89, 0.2);
+            border-color: var(--mid-green);
+        }
+
+        /* Footer Ejecutivo Fuerte */
+        footer {
+            background-color: #011f22;
+            color: #ffffff;
+            padding: 60px 20px 30px 20px;
+        }
+
+        .footer-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            border-bottom: 1px solid rgba(242, 231, 218, 0.1);
+            padding-bottom: 40px;
+            margin-bottom: 25px;
+            text-align: left;
+        }
+
+        .footer-section h4 {
+            color: var(--rich-salmon);
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .footer-section p, .footer-section ul {
+            color: #a3b9bb;
+            font-size: 0.9rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-section i {
+            margin-right: 10px;
+            color: var(--salmon);
+        }
+
+        .footer-bottom {
+            font-size: 0.85rem;
+            color: #728c8e;
+            display: flex;
+            justify-content: space-between;
+            max-width: 1100px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        /* Ajustes Responsivos */
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.1rem; }
+            .footer-bottom { justify-content: center; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Encabezado Institucional -->
+    <header>
+        <h1>Tu Tranquilidad, Mi Compromiso</h1>
+        <p>Soluciones integrales en consultoría patrimonial. Asegura el mañana de tu familia y la estabilidad de tu negocio con un respaldo sólido y profesional.</p>
+        <a href="#agenda" class="btn btn-primary-action" style="width: auto; display: inline-flex;">Agendar Asesoría Corporativa</a>
+    </header>
+
+    <div class="container">
+        
+        <!-- Sección de Presentación e Identidad -->
+        <section class="grid-two-columns">
+            
+            <!-- Tarjeta Sobre Mí -->
+            <div class="card profile-card">
+                <div class="avatar-container">
+                    <img src="20 may 2026, 22_11_57.png" alt="Jorge Sánchez Juárez - Asesor de Seguros">
+                </div>
+                <h2>Sobre Mí</h2>
+                <p>Me dedico a ofrecer consultoría patrimonial y de seguros con un enfoque completamente humano y personalizado. Sé que el futuro puede ser impredecible, por lo que mi meta es diseñar la estrategia perfecta para que tú y los tuyos caminen con total seguridad.</p>
+            </div>
+            
+            <!-- Tarjeta ¿Qué problemas resolvemos? -->
+            <div class="card problems-card">
+                <div class="problems-header">
+                    <h2>Gestión de Riesgos Patrimoniales</h2>
+                </div>
+                <div class="problems-content">
+                    <p>Diseño soluciones a la medida para mitigar riesgos financieros y asegurar metas:</p>
+                    <ul>
+                        <li>Gastos Médicos Mayores ante cualquier emergencia.</li>
+                        <li>Planes de Retiro estables para garantizar tu vejez.</li>
+                        <li>Protección familiar y educación de tus hijos.</li>
+                        <li>Seguros de auto, negocio y daños materiales.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bloques de Cierre Inferiores -->
+        <section class="grid-three-columns">
+            
+            <!-- Bloque 1: Contacto Directo -->
+            <div class="bottom-card">
+                <div>
+                    <h3>Canales de Comunicación</h3>
+                    <p>Contacta directamente para recibir asistencia personalizada e inmediata:</p>
+                </div>
+                <div class="buttons-container">
+                    <a href="https://wa.me/522212898482?text=Hola,%20me%20interesa%20una%20asesoría%20sobre%20seguros" target="_blank" class="btn btn-primary-action">
+                        <i class="fab fa-whatsapp"></i> Enviar WhatsApp
+                    </a>
+                    <a href="mailto:mr.agente1@gmail.com?subject=Consulta%20sobre%20Seguros" class="btn btn-secondary-action">
+                        <i class="fas fa-envelope"></i> Correo Electrónico
+                    </a>
+                </div>
+            </div>
+
+            <!-- Bloque 2: Agenda Virtual -->
+            <div id="agenda" class="bottom-card">
+                <div>
+                    <h3>Consultoría Virtual</h3>
+                    <div class="calendar-icon-box">
+                        <i class="far fa-calendar-alt"></i>
+                    </div>
+                    <p>Coordina una sesión digital en la fecha y hora que mejor se adapte a tu agenda corporativa.</p>
+                </div>
+                <div class="buttons-container">
+                    <a href="https://calendly.com/mr-agente1/30min" target="_blank" class="btn btn-primary-action">
+                        <i class="fas fa-clock"></i> Reservar Espacio
+                    </a>
+                </div>
+            </div>
+
+            <!-- Bloque 3: Ubicación de la Firma -->
+            <div class="bottom-card" style="padding: 20px;">
+                <h3>Oficina Central</h3>
+                <div class="map-container">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1881.3344697968538!2d-98.24072!3d19.04365!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTXCsDAyJzM3LjEiTiA5OMKwMTQnMjYuNiJX!5e0!3m2!1ses-419!2smx!4v1710000000000!5m2!1ses-419!2smx" 
+                        width="100%" 
+                        height="180" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+                <div class="buttons-container" style="margin-top: 15px;">
+                    <a href="https://maps.app.goo.gl/XpQdXAutoU2jVsWq7?g_st=iw" target="_blank" class="btn btn-secondary-action" style="padding: 8px 15px; font-size: 0.85rem;">
+                        <i class="fas fa-external-link-alt"></i> Abrir en Google Maps
+                    </a>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- NUEVA SECCIÓN: Opiniones de Clientes -->
+        <section class="reviews-section">
+            <h2>Opiniones de Nuestros Clientes</h2>
+            <p class="subtitle">La confianza y satisfacción de quienes respaldan su patrimonio con nosotros.</p>
+            
+            <div class="reviews-grid">
+                <!-- Comentario 1 -->
+                <div class="review-card">
+                    <div class="review-header">
+                        <span class="client-name">Carlos Mendoza</span>
+                        <div class="stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="review-text">"Excelente atención corporativa. Me ayudó a estructurar mi plan personal de retiro y el proceso fue transparente y sumamente profesional."</p>
+                </div>
+
+                <!-- Comentario 2 -->
+                <div class="review-card">
+                    <div class="review-header">
+                        <span class="client-name">Ana María Silva</span>
+                        <div class="stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="review-text">"El seguro de Gastos Médicos Mayores que contrate me dio total tranquilidad. Explicaciones claras y sin letras chiquitas. ¡Muy recomendado!"</p>
+                </div>
+            </div>
+
+            <!-- Formulario para agregar reseña -->
+            <div class="review-form-container">
+                <h3>Comparta su Experiencia</h3>
+                <form action="#" onsubmit="event.preventDefault(); alert('¡Gracias por su calificación corporativa!');">
+                    <div class="form-group">
+                        <label>Nombre Completo / Empresa</label>
+                        <input type="text" class="form-input" placeholder="Ej. Ing. Roberto Gómez" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Calificación</label>
+                        <div class="stars-selector">
+                            <i class="fas fa-star star-option"></i>
+                            <i class="fas fa-star star-option"></i>
+                            <i class="fas fa-star star-option"></i>
+                            <i class="fas fa-star star-option"></i>
+                            <i class="fas fa-star star-option"></i>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Comentario o Reseña</label>
+                        <textarea class="form-textarea" rows="3" placeholder="Escriba aquí los detalles de su experiencia con nuestra asesoría..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary-action">Enviar Evaluación</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Redes Sociales de la Firma -->
+        <section class="social-section">
+            <h2>Canales Oficiales</h2>
+            <p>Sigue nuestras publicaciones informativas sobre finanzas, previsión y gestión del patrimonio:</p>
+            <div class="social-buttons">
+                <a href="https://www.facebook.com/share/1aHs6mqyPf/" target="_blank" class="social-btn" title="Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://www.instagram.com/mr.agente1?igsh=MTN0aDIzMXNiYno0Mw==" target="_blank" class="social-btn" title="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://youtube.com/@mr.agente1?si=BSXiXpZPrHnj_kbH" target="_blank" class="social-btn" title="YouTube">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a href="https://www.tiktok.com/@mr.agente1?_r=1&_t=ZS-974tsuigQLa" target="_blank" class="social-btn" title="TikTok">
+                    <i class="fab fa-tiktok"></i>
+                </a>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Pie de Página Institucional -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Grupo Gama</h4>
+                <p>Firma de consultoría patrimonial y soluciones de seguros enfocada en la transparencia, solidez institucional y protección financiera.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Secciones</h4>
+                <ul>
+                    <li>Sobre Mí</li>
+                    <li>Contacto</li>
+                    <li>Soluciones</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contacto Legal</h4>
+                <p><i class="fas fa-phone"></i> 220-428-0615</p>
+                <p><i class="fas fa-envelope"></i> Sonata, Lomas de Angelopolis. Puebla</p>
+                <p><i class="fas fa-map-marker-alt"></i> direccion.grupogama@gmail.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>Consultoría Patrimonial | Grupo Gama</span>
+            <span>Soporte Oficial © 2026 Grupo Gama</span>
+        </div>
+    </footer>
+
+</body>
+</html>
